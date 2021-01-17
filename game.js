@@ -41,13 +41,27 @@ function animatePress(currentColour) {
 	}, 100);
 }
 //  Слушатель нажатий на клавиши
-	var gameStarted = false;
-	$("body").keydown(function() {
-		if(gameStarted === false) {
+var gameStarted = false;
+$(".start-Game-Button").click(function(){
+	$(".start-Game-Button").addClass("pressedStartGameButton");
+setTimeout(function() {
+$(".start-Game-Button").removeClass("pressedStartGameButton");
+}, 100);
+	if(gameStarted === false) {
+		setTimeout(function(){
 		nextSequence();
 		gameStarted = true;
-		}
-	});
+		}, 600);
+}
+});
+$("body").keydown(function() {
+	if(gameStarted === false) {
+	setTimeout(function(){
+		nextSequence();
+		gameStarted = true;
+		}, 600);
+	}
+});
 
 	function checkAnswer(currentLevel) {
 		if(userClickPattern[currentLevel] === gamePattern[currentLevel]){

@@ -54,3 +54,16 @@ body {
 .repeat {
   visibility: hidden;
 }
+.start-Game-Button {
+  background-color: purple;
+  margin: 15px;
+  display: inline-block;
+  height: 70px;
+  width: 160px;
+  border: 8px solid black;
+  border-radius: 40%;
+}
+.pressedStartGameButton {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
